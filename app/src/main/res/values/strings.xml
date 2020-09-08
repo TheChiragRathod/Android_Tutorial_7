@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Tutorial 7</string>
+    <string name="loginScreen">Login</string>
+    <string name="UsernameHint">Enter Username</string>
+    <string name="PasswordHint">Enter Password</string>
 </resources>
