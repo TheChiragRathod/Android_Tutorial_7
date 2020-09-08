@@ -3,8 +3,34 @@
     <string name="loginScreen">Login</string>
     <string name="UsernameHint">Enter Username</string>
     <string name="PasswordHint">Enter Password</string>
-
     <string name="lblRegister">Don\'t have an account? Register Now</string>
+
+
+
+
+
+
+
+
+
+    <string name="firstNameHint"> Enter first name</string>
+    <string name="lastNameHint"> Enter last name</string>
+    <string name="emailHint"> Enter email as Username</string>
+    <string name="passwordHint"> Enter password</string>
+    <string name="chkBox">Profile Status Active / Inactive</string>
+    <string name="rdbMale">Male</string>
+    <string name="rdbFemale">Female</string>
+    <string name="btnRegister">Register</string>
+
+    <string-array name="city">
+        <item><font color="#85FFEB3B">Select City</font></item>
+        <item><font color="#FFEB3B">Rajkot</font> </item>
+        <item><font color="#FFEB3B">Ahmedabad</font> </item>
+        <item><font color="#FFEB3B">Bhavnagar</font> </item>
+        <item><font color="#FFEB3B">Himatnagar</font> </item>
+        <item><font color="#FFEB3B">Surat</font> </item>
+        <item><font color="#FFEB3B">Junagadh</font> </item>
+    </string-array>
 
 
 </resources>

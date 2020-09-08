@@ -4,6 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    android:background="@drawable/gradient"
+    tools:context=".Registration" >
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <EditText
+                android:id="@+id/edttxtFname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/person"
+                android:ems="10"
+                android:hint="@string/firstNameHint"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorTextHidden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edttxtLname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/person"
+                android:ems="10"
+                android:hint="@string/lastNameHint"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorTextHidden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edttxtFname" />
+
+            <EditText
+                android:id="@+id/edttxtemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/ic_email"
+                android:ems="10"
+                android:hint="@string/emailHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorTextHidden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edttxtLname" />
+
+            <EditText
+                android:id="@+id/edttxtpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/lock"
+                android:ems="10"
+                android:hint="@string/passwordHint"
+                android:inputType="textPassword"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorTextHidden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edttxtemail" />
+
+            <RadioGroup
+                android:id="@+id/rdbGrpGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edttxtpassword">
+
+                <RadioButton
+                    android:id="@+id/rdbMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/rdbMale"
+                    android:textColor="@color/colorText" />
+
+                <RadioButton
+                    android:id="@+id/rdbFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rdbFemale"
+                    android:textColor="@color/colorText" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/branchSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Branch CE / IT"
+                android:textColor="@color/colorText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rdbGrpGender" />
+
+
+            <Spinner
+                android:id="@+id/spinnerCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:prompt="@array/city"
+                android:popupBackground="@drawable/gradient"
+                >
+
+            </Spinner>
+
+
+
+            <CheckBox
+                android:id="@+id/chkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/chkBox"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorText" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/button_design"
+                android:fontFamily="cursive"
+                android:text="@string/btnRegister"
+                android:textColor="@color/colorText"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/branchSwitch" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
