@@ -44,15 +44,12 @@
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="53dp" />
-
 
             <EditText
                 android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_email"
@@ -64,15 +61,11 @@
                 android:textColorHint="@color/colorText" />
 
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="26dp" />
-
-
             <EditText
                 android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:drawableStart="@drawable/ic_lock"
                 android:ems="10"
@@ -82,15 +75,11 @@
                 android:textColorHint="@color/colorText" />
 
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="55dp" />
-
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button_design"
                 android:fontFamily="sans-serif-medium"
                 android:onClick="login"
@@ -103,6 +92,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
