@@ -4,4 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login"/>
+    android:background="@drawable/gradient"
+    tools:context=".Login">
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/admin_logo" />
+
+            <TextView
+                android:id="@+id/txtLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:text="Login"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
+
+
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:drawableStart="@drawable/ic_email"
+                android:ems="10"
+                android:hint="@string/UsernameHint"
+                android:inputType="textEmailAddress"
+                android:onClick="login"
+                android:textColor="#FFEB3B"
+                android:textColorHint="@color/colorText" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="26dp" />
+
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/lock"
+                android:ems="10"
+                android:hint="@string/PasswordHint"
+                android:inputType="textPassword"
+                android:textColor="#FFEB3B"
+                android:textColorHint="@color/colorText" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/button_design"
+                android:fontFamily="sans-serif-medium"
+                android:onClick="login"
+                android:text="Login"
+                android:textColor="@color/colorText"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
