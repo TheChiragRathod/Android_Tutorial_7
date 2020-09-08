@@ -99,6 +99,16 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="@string/lblRegister"
+                android:textColor="@color/colorText"
+                android:textSize="18sp" />
+
 
         </LinearLayout>
     </ScrollView>

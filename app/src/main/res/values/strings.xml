@@ -3,4 +3,6 @@
     <string name="loginScreen">Login</string>
     <string name="UsernameHint">Enter Username</string>
     <string name="PasswordHint">Enter Password</string>
+    <string name="lblRegister">Don't have an account? Register Now</string>
+
 </resources>
