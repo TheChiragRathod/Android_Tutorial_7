@@ -3,6 +3,7 @@ package com.rku.tutorial7;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.ContactsContract;
@@ -63,5 +64,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
         else
             return true;
     }
+    public Cursor checkEmail(String Email)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String Query="SELECT * FROM "+TABLE+ " WHERE "+COL_4+" = "+"'"+Email+"'";
+        Cursor res=db.rawQuery(Query,null);
+        return res;
+    }
+
 }
 

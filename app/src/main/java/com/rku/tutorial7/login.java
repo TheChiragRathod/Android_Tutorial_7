@@ -3,14 +3,18 @@ package com.rku.tutorial7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class login extends AppCompatActivity
 {
     EditText editTextUser;
     EditText editTextPass;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,6 +32,19 @@ public class login extends AppCompatActivity
     {
         if(!LoginValidation())
             return;
+
+        String Email=editTextUser.getText().toString();
+        db=new DatabaseHelper(this);
+
+        Cursor res= db.checkEmail(Email);
+        if(res.getCount()==1) {
+            Intent intent=new Intent(login.this,welcome.class);
+            intent.putExtra("Email",Email);
+            startActivity(intent);
+            finish();
+        }
+        else
+            Toast.makeText(this, "No Record Found", Toast.LENGTH_SHORT).show();
     }
 
     public boolean LoginValidation()

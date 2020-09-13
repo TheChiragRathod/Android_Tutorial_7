@@ -7,13 +7,6 @@
     <string name="lblLogin">Already has account! Login here</string>
 
 
-
-
-
-
-
-
-
     <string name="firstNameHint"> Enter first name</string>
     <string name="lastNameHint"> Enter last name</string>
     <string name="emailHint"> Enter email as Username</string>
