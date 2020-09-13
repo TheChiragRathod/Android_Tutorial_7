@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".Registration" >
+    tools:context=".register" >
 
 
     <ScrollView
@@ -189,6 +189,7 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/button_design"
                 android:fontFamily="cursive"
+                android:onClick="Register"
                 android:text="@string/btnRegister"
                 android:textColor="@color/colorText"
                 android:textSize="24sp"

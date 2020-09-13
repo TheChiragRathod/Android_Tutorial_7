@@ -22,6 +22,7 @@
     <string name="rdbFemale">Female</string>
     <string name="btnRegister">Register</string>
 
+
     <string-array name="city">
         <item><font color="#85FFEB3B">Select City</font></item>
         <item><font color="#FFEB3B">Rajkot</font> </item>
