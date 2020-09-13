@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -38,6 +40,8 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
     String Branch;
     String City;
     String Status;
+
+    DatabaseHelper db;
 
 
 
@@ -72,7 +76,11 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
         //Spinner City Code Finished here.................
 
 
+        //DataBase Creation Code Start Here......
 
+         db=new DatabaseHelper(this);
+
+        //DataBase Creation Code Finish Here......
 
 
     }
@@ -109,9 +117,17 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
             Branch="IT";
 
 
+        //DataBase Insertion Code Start Here......
+
+        if(db.InsertData(FirstName,LastName,email,password,Gender,Branch,City,Status)) {
+            Toast.makeText(this, "Record Inserted Successfully...", Toast.LENGTH_SHORT).show();
+            clearFields();
+        }
+        else
+            Toast.makeText(this, "Record Is Not Inserted...", Toast.LENGTH_SHORT).show();
 
 
-
+        //DataBase Insertion Code Finish Here......
 
     }
 
@@ -163,6 +179,24 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
         return re;
     }
 
+    public void clearFields()
+    {
+        editTextFname.setText("");
+        editTextLname.setText("");
+        editTextemail.setText("");
+        editTextpassword.setText("");
+
+        if(checkBox.isChecked())
+            checkBox.toggle();
+
+        if(aSwitch.isChecked())
+            aSwitch.toggle();
+
+        spyCity.setSelection(0);
+
+        radioButton=findViewById(R.id.rdbMale);
+        radioButton.setChecked(true);
+    }
 
 
 
