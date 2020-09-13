@@ -199,6 +199,13 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
 
+    public void RegisterToLogin(View view)
+    {
+        Intent intent=new Intent(register.this,login.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 
 

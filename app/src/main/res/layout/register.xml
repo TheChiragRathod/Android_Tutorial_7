@@ -209,6 +209,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
+                android:onClick="RegisterToLogin"
                 android:text="@string/lblLogin"
                 android:textColor="@color/colorText"
                 android:textSize="16sp" />

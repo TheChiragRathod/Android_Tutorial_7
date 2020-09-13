@@ -82,6 +82,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_design"
                 android:fontFamily="sans-serif-medium"
+                android:onClick="LoginHere"
                 android:text="Login"
                 android:textColor="@color/colorText"
                 android:textSize="24sp"
