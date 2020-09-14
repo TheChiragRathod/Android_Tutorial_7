@@ -34,9 +34,10 @@ public class login extends AppCompatActivity
             return;
 
         String Email=editTextUser.getText().toString();
+
         db=new DatabaseHelper(this);
 
-        Cursor res= db.checkEmail(Email);
+        Cursor res= db.validateUser(Email);
         if(res.getCount()==1) {
             Intent intent=new Intent(login.this,welcome.class);
             intent.putExtra("Email",Email);

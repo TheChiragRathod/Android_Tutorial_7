@@ -59,16 +59,19 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         long result=db.insert(TABLE,null,values);
 
+
         if(result==-1)
             return false;
         else
             return true;
     }
-    public Cursor checkEmail(String Email)
+    public Cursor validateUser(String Email)
     {
         SQLiteDatabase db=getReadableDatabase();
         String Query="SELECT * FROM "+TABLE+ " WHERE "+COL_4+" = "+"'"+Email+"'";
+
         Cursor res=db.rawQuery(Query,null);
+
         return res;
     }
 
