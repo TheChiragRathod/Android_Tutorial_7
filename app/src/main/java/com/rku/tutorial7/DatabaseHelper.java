@@ -57,6 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
         values.put(COL_8,City);
         values.put(COL_9,Status);
 
+
         long result=db.insert(TABLE,null,values);
 
 
@@ -65,7 +66,16 @@ public class DatabaseHelper extends SQLiteOpenHelper
         else
             return true;
     }
-    public Cursor validateUser(String Email)
+    public Cursor validateUser(String Email,String Password)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String Query="SELECT * FROM "+TABLE+ " WHERE "+COL_4+" = "+"'"+Email+"' and "+COL_5+"="+"'"+Password+"'";
+
+        Cursor res=db.rawQuery(Query,null);
+
+        return res;
+    }
+    public Cursor getData(String Email)
     {
         SQLiteDatabase db=getReadableDatabase();
         String Query="SELECT * FROM "+TABLE+ " WHERE "+COL_4+" = "+"'"+Email+"'";
@@ -74,6 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         return res;
     }
+
 
 }
 

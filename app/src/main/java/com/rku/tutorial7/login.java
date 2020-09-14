@@ -3,6 +3,7 @@ package com.rku.tutorial7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,16 @@ public class login extends AppCompatActivity
         editTextUser=findViewById(R.id.edtUsername);
         editTextPass=findViewById(R.id.edtPassword);
 
+        SharedPreferences SP= getSharedPreferences("Login_Info",MODE_PRIVATE);
+        String User=SP.getString("Username","");
+
+        if(!User.equals(""))
+        {
+            Intent intent=new Intent(this,welcome.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
 
 
@@ -34,13 +45,18 @@ public class login extends AppCompatActivity
             return;
 
         String Email=editTextUser.getText().toString();
-
+        String Password=editTextPass.getText().toString();
         db=new DatabaseHelper(this);
 
-        Cursor res= db.validateUser(Email);
+        Cursor res= db.validateUser(Email,Password);
         if(res.getCount()==1) {
+
+            SharedPreferences SP=getSharedPreferences("Login_Info",MODE_PRIVATE);
+            SharedPreferences.Editor editor=SP.edit();
+            editor.putString("Username",Email);
+            editor.apply();
+
             Intent intent=new Intent(login.this,welcome.class);
-            intent.putExtra("Email",Email);
             startActivity(intent);
             finish();
         }

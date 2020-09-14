@@ -56,7 +56,6 @@
                 android:ems="10"
                 android:hint="@string/UsernameHint"
                 android:inputType="textEmailAddress"
-                android:onClick="login"
                 android:textColor="#FFEB3B"
                 android:textColorHint="@color/colorText" />
 

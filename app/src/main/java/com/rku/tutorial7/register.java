@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -18,7 +20,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class register<textWatcher> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     RadioGroup radioGroup;
     RadioButton radioButton;
@@ -148,6 +150,12 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
             editTextpassword.setError("Please Enter Password!");
             re=false;
         }
+        else if(password.length()<6)
+        {
+            editTextpassword.requestFocus();
+            editTextpassword.setError("Password contains minimum 6 letters");
+            re=false;
+        }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
             editTextemail.requestFocus();
@@ -205,11 +213,6 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
         startActivity(intent);
         finish();
     }
-
-
-
-
-
 
 
 
