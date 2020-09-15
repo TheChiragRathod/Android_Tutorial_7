@@ -3,13 +3,19 @@ package com.rku.tutorial7;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,14 +31,14 @@ public class welcome extends AppCompatActivity {
     TextView txtViewBranch;
     TextView txtViewCity;
     TextView txtViewStatus;
+
+
+    Button btnlogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
         this.setTitle("Your Details");
-
-
-
 
 
         //Initializing Variables start here...
@@ -94,7 +100,30 @@ public class welcome extends AppCompatActivity {
         {
 
             case R.id.menuLogout:
-                logout();
+
+                AlertDialog.Builder builder=new AlertDialog.Builder(this);
+
+                builder.setTitle("Confirm Logout")
+                        .setMessage("Do you really want to logout?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                logout();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+               alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(150,115,200)));
+
+
+
                 break;
 
             case R.id.menuDisplay:
