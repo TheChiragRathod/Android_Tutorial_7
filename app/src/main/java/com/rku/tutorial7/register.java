@@ -2,6 +2,7 @@ package com.rku.tutorial7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -27,6 +28,7 @@ public class register<textWatcher> extends AppCompatActivity implements AdapterV
     EditText editTextFname;
     EditText editTextLname;
     EditText editTextemail;
+    TextView editTextEmailError;
     EditText editTextpassword;
     EditText editTextHidden;
     Switch aSwitch;
@@ -49,6 +51,7 @@ public class register<textWatcher> extends AppCompatActivity implements AdapterV
 
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,7 +130,11 @@ public class register<textWatcher> extends AppCompatActivity implements AdapterV
             clearFields();
         }
         else
-            Toast.makeText(this, "Record Is Not Inserted...", Toast.LENGTH_SHORT).show();
+        {
+            editTextemail.requestFocus();
+            editTextEmailError=findViewById(R.id.emailError);
+            editTextEmailError.setText("Email already has been taken!");
+        }
 
 
         //DataBase Insertion Code Finish Here......
