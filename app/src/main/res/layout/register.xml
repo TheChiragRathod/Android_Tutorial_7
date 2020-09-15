@@ -80,6 +80,7 @@
                 android:ems="10"
                 android:hint="@string/emailHint"
                 android:inputType="textEmailAddress"
+                android:selectAllOnFocus="false"
                 android:textColor="@color/colorText"
                 android:textColorHint="@color/colorTextHidden"
                 app:layout_constraintEnd_toEndOf="parent"

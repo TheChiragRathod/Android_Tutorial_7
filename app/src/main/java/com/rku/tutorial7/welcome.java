@@ -55,8 +55,6 @@ public class welcome extends AppCompatActivity {
         txtLoginDetail.setText(UserEmail);
 
 
-        SetData();
-
     }
 
     public void SetData()
@@ -98,6 +96,11 @@ public class welcome extends AppCompatActivity {
             case R.id.menuLogout:
                 logout();
                 break;
+
+            case R.id.menuDisplay:
+                SetData();
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

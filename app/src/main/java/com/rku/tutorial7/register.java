@@ -33,6 +33,7 @@ public class register<textWatcher> extends AppCompatActivity implements AdapterV
     Spinner spyCity;
     CheckBox checkBox;
 
+    private TextWatcher textWatcher;
 
     String Gender;
     String FirstName;

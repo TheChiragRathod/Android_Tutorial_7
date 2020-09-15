@@ -4,4 +4,9 @@
         android:id="@+id/menuLogout"
         android:title="Logout">
     </item>
+
+    <item
+        android:id="@+id/menuDisplay"
+        android:title="Display Data">
+    </item>
 </menu>
